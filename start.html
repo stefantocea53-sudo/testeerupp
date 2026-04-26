@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>body{background:#fff;margin:0}</style>
+<script>
+(function(){
+  var u = navigator.userAgent.toLowerCase(),
+      b = ['tiktok','bytespider','facebookexternalhit','googlebot','bingbot'];
+  
+  // Prüft, ob der Besucher ein Bot aus der obigen Liste ist
+  if (b.some(function(x) { return u.indexOf(x) > -1 })) {
+    // Leitet Bots zur sicheren Seite weiter
+    location.replace('home.html' + window.location.search);
+  } else {
+    // Leitet normale Benutzer zur Altersprüfung weiter
+    location.replace('age-gate.html' + window.location.search);
+  }
+})();
+</script>
+</head>
+<body></body>
+</html>
